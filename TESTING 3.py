@@ -214,7 +214,6 @@ if 'datetime' not in df.columns:
 df['datetime'] = pd.to_datetime(
     df['datetime'],
     errors='coerce',
-    infer_datetime_format=True
 )
 
 # =========================================================
