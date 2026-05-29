@@ -991,10 +991,12 @@ elif menu == "City Dashboard":
     st.subheader("Monthly AQI Trend")
 
     monthly = (
-        city_df
-        .set_index('datetime')
-        .resample('M')['Final_AQI']
-        .mean()
+    city_df
+    .set_index('datetime')
+    .sort_index()
+    .resample('ME')['Final_AQI']
+    .mean()
+        
     )
 
     fig, ax = plt.subplots(figsize=(12,5))
